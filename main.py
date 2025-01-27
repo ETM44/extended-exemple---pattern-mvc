@@ -9,9 +9,9 @@ from view.task_view import TaskView
 # Main application
 def main():
     app = QApplication(sys.argv)
-    view = TaskView()
-    controller = TaskController(view)
-    view.show()
+    
+    controller = TaskController()
+    
     sys.exit(app.exec_())
 
 
