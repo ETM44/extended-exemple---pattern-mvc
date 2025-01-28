@@ -3,15 +3,14 @@ from PyQt5.QtWidgets import (
 )
 import sys
 
-from controller.task_controller import TaskController
+from controller.main_controller import MainController
 from view.task_view import TaskView
 
 # Main application
 def main():
     app = QApplication(sys.argv)
-    
-    controller = TaskController()
-    
+    controller = MainController()
+    controller.start()
     sys.exit(app.exec_())
 
 

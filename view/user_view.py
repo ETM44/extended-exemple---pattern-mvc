@@ -2,20 +2,20 @@ from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QLineEdit, QPushButton, QListWidget, QMessageBox
 )
 
-# TaskView
-class TaskView(QWidget):
+# UserView
+class UserView(QWidget):
     def __init__(self):
         super().__init__()
         layout = QVBoxLayout()
 
-        self.task_input = QLineEdit(self)
-        self.task_input.setPlaceholderText("Enter a task")
-        self.add_button = QPushButton("Add Task", self)
-        self.task_list_widget = QListWidget(self)
+        self.user_input = QLineEdit(self)
+        self.user_input.setPlaceholderText("Enter a user")
+        self.add_button = QPushButton("Add User", self)
+        self.user_list_widget = QListWidget(self)
 
-        layout.addWidget(self.task_input)
+        layout.addWidget(self.user_input)
         layout.addWidget(self.add_button)
-        layout.addWidget(self.task_list_widget)
+        layout.addWidget(self.user_list_widget)
 
         self.setLayout(layout)
 
