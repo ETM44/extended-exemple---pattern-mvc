@@ -3,8 +3,8 @@ from PyQt5.QtWidgets import (
 )
 import sys
 
-from controller.main_controller import MainController
-from view.task_view import TaskView
+from controllers.main_controller import MainController
+from views.task_view import TaskView
 
 # Main application
 def main():

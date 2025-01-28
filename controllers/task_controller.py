@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QListWidgetItem
 
-from model.task_model import TaskModel
-from view.task_view import TaskView
+from models.task_model import TaskModel
+from views.task_view import TaskView
 
 # TaskController
 class TaskController:

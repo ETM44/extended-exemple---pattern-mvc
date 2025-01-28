@@ -1,8 +1,8 @@
-from controller.task_controller import TaskController
-from controller.user_controller import UserController
-from view.main_window import MainWindow
-from view.task_view import TaskView
-from view.user_view import UserView
+from controllers.task_controller import TaskController
+from controllers.user_controller import UserController
+from views.main_window import MainWindow
+from views.task_view import TaskView
+from views.user_view import UserView
 
 
 class MainController:

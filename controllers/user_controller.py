@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QListWidgetItem
-from model.user_model import UserModel
-from view.user_view import UserView
+from models.user_model import UserModel
+from views.user_view import UserView
 
 
 class UserController:
