@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import (
 import sys
 
 from controllers.main_controller import MainController
-from views.task_view import TaskView
 
 # Main application
 def main():
