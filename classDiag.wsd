@@ -1,47 +1,75 @@
-@startuml
-skinparam classAttributeIconSize 0
+@startuml diagram
 
 ' Définition des classes
-class TaskModel {
-  - task_list: List[str]
-  + create(task: str): void
-  + delete(index: int): void
-  + reads(): List[str]
+class MainWindow {
+    + QToolBar toolbar
+    + QStackedWidget stack
+    + QAction btn_tasks
+    + QAction btn_users
+    + MainWindow(MainController)
 }
 
-class UserModel {
-  - user_list: List[str]
-  + create(user: str): void
-  + delete(index: int): void
-  + reads(): List[str]
-}
-
-class TaskView {
-  + task_input: QLineEdit
-  + add_button: QPushButton
-  + user_input: QLineEdit
-  + user_add_button: QPushButton
-  + task_list_widget: QListWidget
-  + user_list_widget: QListWidget
-  + show_error(message: str): void
+class MainController {
+    + TaskController task_controller
+    + UserController user_controller
+    + showPageTasks()
+    + showPageUsers()
+    + start()
 }
 
 class TaskController {
-  - task_model: TaskModel
-  - user_model: UserModel
-  - view: TaskView
-  + add_task(): void
-  + remove_task(item: QListWidgetItem): void
-  + add_user(): void
-  + remove_user(item: QListWidgetItem): void
-  + update_task_list(): void
-  + update_user_list(): void
+    - TaskModel model
+    - TaskView view
+    + add_task()
+    + remove_task()
+    + update_task_list()
+}
+
+class UserController {
+    - UserModel model
+    - UserView view
+    + add_user()
+    + remove_user()
+    + update_user_list()
+}
+
+class TaskView {
+    + QVBoxLayout layout
+    + QLineEdit task_input
+    + QPushButton add_button
+    + QListWidget task_list_widget
+    + show_error(message)
+}
+
+class UserView {
+    + QVBoxLayout layout
+    + QLineEdit user_input
+    + QPushButton add_button
+    + QListWidget user_list_widget
+    + show_error(message)
+}
+
+class TaskModel {
+    - list task_list
+    + create(user)
+    + remove(index)
+    + reads()
+}
+
+class UserModel {
+    - list user_list
+    + create(user)
+    + remove(index)
+    + reads()
 }
 
 ' Relations entre les classes
-TaskController --> TaskModel : utilise
-TaskController --> UserModel : utilise
-TaskController --> TaskView : utilise
-TaskView <-- TaskModel : communique via le contrôleur
-TaskView <-- UserModel : communique via le contrôleur
+MainController --> MainWindow
+MainController --> TaskController
+MainController --> UserController
+TaskController --> TaskView
+TaskController --> TaskModel
+UserController --> UserView
+UserController --> UserModel
+
 @enduml
